@@ -6,6 +6,7 @@ defmodule MoustasheServer do
       app: :moustashe_server,
       version: "0.1.0",
       elixir: "~> 1.6-dev",
+      build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps()
     ]
@@ -14,7 +15,8 @@ defmodule MoustasheServer do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      applications: [:logger, :ranch],
+      mod: {MoustasheServer}
     ]
   end
 

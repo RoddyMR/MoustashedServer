@@ -2,7 +2,7 @@
 defmodule MoustasheServer do
     use GenServer
     alias Network.Handler
-    require Logger    
+    require Logger   
 
  @doc """
  Starts the server.
